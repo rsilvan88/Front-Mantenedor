@@ -1,0 +1,26 @@
+<div class="col-md-6 offset-md-3">
+<h3 class="text-center">Registrar nueva Tarea</h3>
+<form (ngSubmit)="onSubmit()">
+<div class="form-group">
+<label>Descripcion :</label>
+<input type="text" 
+class="form-control" 
+id="descripcion" 
+[(ngModel)]="tarea.descripcion" name ="descripcion" >
+</div>
+<div class="form-group">
+    <label>Fecha de Creacion :</label>
+    <input type="date" 
+    class="form-control" 
+    id="fechaCreacion" 
+    [(ngModel)]="tarea.fechaCreacion" name ="fechaCreacion" >
+</div>
+<div class="form-group">
+    <label class="form-check-label" for="tarea.vigente">Vigencia :</label>
+    <input type="checkbox" 
+    class="form-check-input" id="vigente" 
+    [(ngModel)]="tarea.vigente" name ="vigente" >
+</div>
+<button class="btn btn-success">Guardar</button>
+</form>
+</div>

@@ -1,0 +1,29 @@
+<h2>Lista Tareas</h2>
+<table class="table table-striped">
+<thead class="table-dark">
+<tr>
+ <th>Descripcion</th>
+ <th>Fecha</th>
+ <th>Vigente</th>   
+</tr>
+</thead>
+<tbody>
+    <tr *ngFor="let tarea of tareas"> 
+   <td>{{tarea.descripcion}}</td>
+   <td>{{ tarea.fechaCreacion | date : "yyyy-MM-dd"}}</td>
+   <td>
+    <input type="checkbox" 
+            class="form-control form-check-input" 
+            id="vigente" 
+            [(ngModel)]="tarea.vigente" 
+            name ="vigente" 
+            #vigente = "ngModel">
+   </td>
+   <td>
+    <button (click)="actualizarTarea(tarea.identificador)" class="btn btn-info">Editar</button>
+    <button (click)="eliminarTarea(tarea.identificador)" class="btn btn-info" style="margin-left: 10px;">Eliminar</button>
+
+   </td> 
+    </tr>
+    </tbody>
+</table>
