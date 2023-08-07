@@ -1,6 +1,6 @@
 export class Tarea {
     identificador:number;
     descripcion:string;
-    fechaCreacion:string;
+    fechaCreacion:Date;
     vigente:boolean;
 }
