@@ -10,7 +10,7 @@
 <tbody>
     <tr *ngFor="let tarea of tareas"> 
    <td>{{tarea.descripcion}}</td>
-   <td>{{ tarea.fechaCreacion | date : "yyyy-MM-dd"}}</td>
+   <td>{{ tarea.fechaCreacion | date : "yyyy/MM/dd"}}</td>
    <td>
     <input type="checkbox" 
             class="form-control form-check-input" 

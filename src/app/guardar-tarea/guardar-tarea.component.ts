@@ -22,7 +22,6 @@ ngOnInit(): void {
 guardarTarea(){
   this.tareaServicio.registrarTarea(this.tarea).subscribe(dato => 
     {
-      console.log(dato);
       this.irListaTareas();
     },error => console.log(error)
     );

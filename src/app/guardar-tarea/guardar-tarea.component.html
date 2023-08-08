@@ -1,19 +1,35 @@
 <div class="col-md-6 offset-md-3">
 <h3 class="text-center">Registrar nueva Tarea</h3>
-<form (ngSubmit)="onSubmit()">
+<form (ngSubmit)="onSubmit()" #tareaForm = "ngForm">
 <div class="form-group">
 <label>Descripcion :</label>
 <input type="text" 
 class="form-control" 
 id="descripcion" 
-[(ngModel)]="tarea.descripcion" name ="descripcion" >
+[(ngModel)]="tarea.descripcion" 
+name ="descripcion" 
+required
+minlength="10"
+placeholder="Digite descripcion de tarea "
+#descripcion = "ngModel">
+<div class="alert alert-danger" *ngIf= "descripcion.invalid && (descripcion.dirty || descripcion.touched)">
+    <div *ngIf = "descripcion.errors?.['required']">Ingrese una descripcion</div>
+    <div *ngIf = "descripcion.errors?.['minlength']">El nombre tiene que contener como minimo 4 caracteres</div>
+  </div>
 </div>
 <div class="form-group">
     <label>Fecha de Creacion :</label>
     <input type="date" 
     class="form-control" 
     id="fechaCreacion" 
-    [(ngModel)]="tarea.fechaCreacion" name ="fechaCreacion" >
+    [(ngModel)]="tarea.fechaCreacion" 
+    name ="fechaCreacion" 
+    required
+    placeholder="Digite fecha de creacion de la tarea "
+    #fechaCreacion = "ngModel">
+    <div class="alert alert-danger" *ngIf= "fechaCreacion.invalid && (fechaCreacion.dirty || fechaCreacion.touched)">
+        <div *ngIf = "fechaCreacion.errors?.['required']">Ingrese una fecha</div>
+    </div>
 </div>
 <div class="form-group">
     <label class="form-check-label" for="tarea.vigente">Vigencia :</label>
@@ -21,6 +37,6 @@ id="descripcion"
     class="form-check-input" id="vigente" 
     [(ngModel)]="tarea.vigente" name ="vigente" >
 </div>
-<button class="btn btn-success">Guardar</button>
+<button class="btn btn-success" [disabled]= "!tareaForm.form.valid">Guardar</button>
 </form>
 </div>
