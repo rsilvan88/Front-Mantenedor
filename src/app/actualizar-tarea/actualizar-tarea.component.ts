@@ -3,7 +3,7 @@ import { Component , OnInit} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Tarea } from '../tarea';
 import { TareaService } from '../tarea.service';
-import { formatDate , DatePipe } from '@angular/common';
+import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-actualizar-tarea',

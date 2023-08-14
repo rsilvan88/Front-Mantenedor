@@ -18,8 +18,8 @@ export class TareaService {
   }
 
     //este metodo nos sirve para registrar una tarea
-    registrarTarea(tarea:Tarea) : Observable<Object>{
-      console.log(tarea.fechaCreacion+"fecha guardada");
+   public registrarTarea(tarea:Tarea) : Observable<Object>{
+      console.log(tarea+"tarea guardada");
       return this.httpClient.post(`${this.baseURL}`,tarea);
     }
 

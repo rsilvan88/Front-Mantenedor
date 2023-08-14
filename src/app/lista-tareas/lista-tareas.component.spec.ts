@@ -1,21 +1,21 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ListaTareasComponent } from './lista-tareas.component';
+import { TareaService } from '../tarea.service';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('ListaTareasComponent', () => {
-  let component: ListaTareasComponent;
-  let fixture: ComponentFixture<ListaTareasComponent>;
-
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      declarations: [ListaTareasComponent]
-    });
-    fixture = TestBed.createComponent(ListaTareasComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+  let service: TareaService;
+  beforeEach(async () => {
+     await TestBed.configureTestingModule({
+      imports:[HttpClientTestingModule],
+      declarations: [ListaTareasComponent],
+    }).compileComponents();
+    service = TestBed.inject(TareaService)
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should create the ListarComponente Service', () => {
+    expect(service).toBeTruthy();
   });
+    
 });

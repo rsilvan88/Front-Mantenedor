@@ -8,6 +8,8 @@ import { HttpClientModule} from '@angular/common/http';
 import { GuardarTareaComponent } from './guardar-tarea/guardar-tarea.component';
 import { FormsModule } from '@angular/forms';
 import { ActualizarTareaComponent } from './actualizar-tarea/actualizar-tarea.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +22,7 @@ import { ActualizarTareaComponent } from './actualizar-tarea/actualizar-tarea.co
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
